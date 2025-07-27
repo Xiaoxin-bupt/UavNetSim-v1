@@ -4,3 +4,9 @@ openpyxl==3.1.5
 Pillow==11.2.1
 scikit_opt==0.6.6
 simpy==4.1.1
+# Deep learning dependencies for GBICR PPO agent
+torch>=1.9.0
+torchvision>=0.10.0
+gym>=0.21.0
+stable-baselines3>=1.6.0
+tensorboard>=2.8.0

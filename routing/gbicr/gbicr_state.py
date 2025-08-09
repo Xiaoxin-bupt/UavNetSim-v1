@@ -1,4 +1,10 @@
 import numpy as np
+import sys
+import os
+
+# Add parent directories to path for imports
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
+
 from utils.util_function import euclidean_distance_3d
 from phy.large_scale_fading import maximum_communication_range
 

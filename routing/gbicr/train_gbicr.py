@@ -17,9 +17,9 @@ import time
 from collections import deque
 
 # Import GBICR components
-from gbicr_config import get_gbicr_config, get_training_config, get_training_env_config
-from gbicr_state import GbicrStateExtractor
-from gbicr_agent import GbicrIntelligentAgent, PPOAgent
+from .gbicr_config import get_gbicr_config, get_training_config, get_training_env_config
+from .gbicr_state import GbicrStateExtractor
+from .gbicr_agent import GbicrIntelligentAgent, PPOAgent
 
 # Setup logging
 logging.basicConfig(

@@ -413,7 +413,7 @@ class QMRTable:
         self.neighbor_table[next_hop_id]["last_max_q"] = max_q
         q_value = self.neighbor_table[next_hop_id]["q_value"]
 
-        reward = self.get_reward(f, next_hop_id, is_penalty)
+        reward = self.get_reward(f, is_penalty, next_hop_id)
 
         normalized_delay = self.get_normalized_delay(next_hop_id)
 

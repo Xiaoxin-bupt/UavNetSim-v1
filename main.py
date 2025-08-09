@@ -27,4 +27,4 @@ if __name__ == "__main__":
     env.run(until=config.SIM_TIME)
     
     # Finalize visualization
-    visualizer.finalize()
+    # visualizer.finalize()

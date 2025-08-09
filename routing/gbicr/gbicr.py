@@ -2,6 +2,12 @@ import copy
 import math
 import random
 import numpy as np
+import sys
+import os
+
+# Add parent directories to path for imports
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
+
 from simulator.log import logger
 from entities.packet import DataPacket
 from topology.virtual_force.vf_packet import VfPacket
@@ -13,6 +19,7 @@ from routing.gbicr.gbicr_state import GbicrStateExtractor
 from routing.gbicr.gbicr_agent import GbicrIntelligentAgent
 from utils import config
 from utils import util_function
+from utils.util_function import euclidean_distance_3d
 from phy.large_scale_fading import maximum_communication_range
 
 
@@ -40,8 +47,8 @@ class GBICR:
     References:
         Based on QGeo and enhanced with PPO and collaborative mechanisms
         
-    Author: AI Assistant
-    Created: 2024
+    Author: liuwenxin
+    Created: 2025/07/27
     """
     
     def __init__(self, simulator, my_drone, pretrained_model_path=None):

@@ -3,8 +3,10 @@ import numpy as np
 import random
 import math
 import queue
+from routing.qmr.qmr import QMR
 from simulator.log import logger
 from entities.packet import DataPacket
+from routing.gbicr.gbicr import GBICR
 from routing.dsdv.dsdv import Dsdv
 from mac.csma_ca import CsmaCa
 from mobility.gauss_markov_3d import GaussMarkov3D
@@ -103,7 +105,7 @@ class Drone:
         self.mac_process_count = 0
         self.enable_blocking = 1  # enable "stop-and-wait" protocol
 
-        self.routing_protocol = Dsdv(self.simulator, self)
+        self.routing_protocol = GBICR(self.simulator, self)
 
         self.mobility_model = GaussMarkov3D(self)
         # self.motion_controller = VfMotionController(self)

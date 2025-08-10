@@ -9,8 +9,6 @@ from utils import config
 
 
 class Greedy:
-    """
-    Main procedure of Greedy Forwarding
 
     In greedy forwarding approach, packets are forwarded to the neighbor located closest to the destination at each hop.
     Greedy routing is highly efficient for the route discovery process, however, the problem of local minimum will

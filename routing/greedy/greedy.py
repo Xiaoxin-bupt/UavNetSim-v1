@@ -10,26 +10,13 @@ from utils import config
 
 class Greedy:
 
-    In greedy forwarding approach, packets are forwarded to the neighbor located closest to the destination at each hop.
-    Greedy routing is highly efficient for the route discovery process, however, the problem of local minimum will
-    significantly limit its performance. Users can extend it by adding some recovery mechanism to improve the
-    performance.
-
-    Attributes:
+    """ Attributes:
         simulator: the simulation platform that contains everything
         my_drone: the drone that installed the greedy routing
         rng_routing: a Random class based on which we can call the function that generates the random number
         hello_interval: interval of sending hello packet
         neighbor_table: neighbor table of greedy routing
-
-    References:
-        [1] N. K. Gupta, R. S. Yadav and R. K. Nagaria, "3D geographical routing protocols in wireless ad hoc and sensor
-            networks: An overview," in Wireless Networks, vol. 26, pp. 2549-2566, 2020.
-
-    Author: Zihao Zhou, eezihaozhou@gmail.com
-    Created at: 2024/1/11
-    Updated at: 2025/4/15
-    """
+     """
 
     def __init__(self, simulator, my_drone):
         self.simulator = simulator

@@ -128,7 +128,8 @@ class QMRTable:
         cur_time = hello_packet.creation_time
         history_packet_recorder = self.my_drone.routing_protocol.history_packet_recorder
 
-        # df: (邻居 j 成功收到 i 发送的 hello 包个数) / (当前节点 i 发给邻居 j 的 hello 包个数), 也就是 j 收到 i hello 的统计概率
+        # df: it is defined as the number of HELLO packets successfully received by drone j from drone i within a
+        # certain period of time divided by the total number of HELLO packets sent by drone i during this period
         received_hello_count_by_this_neighbor = received_hello_count[self.my_drone.identifier][0]
         received_hello_begin_time = received_hello_count[self.my_drone.identifier][1] - qmr_config.hello_interval / 2
         received_hello_end_time = received_hello_count[self.my_drone.identifier][2]
@@ -140,7 +141,8 @@ class QMRTable:
         else:
             df = received_hello_count_by_this_neighbor / sent_hello_count
 
-        # dr: (i 收到来自邻居 j 的 ack 的个数) / (i 向 j 发送的 date packets 的个数) 也就是 i 收到 j 发送的 ack 的统计概率
+        # dr: it is defined as the number of ACK packets received by drone i from drone j within a certain period of
+        # time divided by the number of data packets sent by drone i to drone j
         cur_time = self.env.now
         received_ack_count = history_packet_recorder.get_active_received_ack_packet_count(neighbor_id, cur_time)
         sent_data_count = history_packet_recorder.get_active_sent_data_packet_count(neighbor_id, cur_time)
@@ -149,9 +151,15 @@ class QMRTable:
         else:
             dr = received_ack_count / sent_data_count
 
-        logger.info(f"uav: {self.my_drone.identifier}, neighbor: {neighbor_id}, df: {df}, received_hello_count_by_this_neighbor: {received_hello_count_by_this_neighbor}, sent_hello_count: {sent_hello_count}, "
-                     f"dr: {dr}, received_ack_count: {received_ack_count}, sent_data_count: {sent_data_count}, "
-                     f"cur_time: {cur_time}")
+        logger.info(f"uav: {self.my_drone.identifier}, "
+                    f"neighbor: {neighbor_id}, "
+                    f"df: {df}, "
+                    f"received_hello_count_by_this_neighbor: {received_hello_count_by_this_neighbor}, "
+                    f"sent_hello_count: {sent_hello_count}, "
+                    f"dr: {dr}, "
+                    f"received_ack_count: {received_ack_count}, "
+                    f"sent_data_count: {sent_data_count}, "
+                    f"cur_time: {cur_time}")
 
         # LQ = df * dr
         return df * dr

@@ -181,7 +181,7 @@ class QMR:
                 else:
                     pass
 
-        elif isinstance(packet, QMRAckPacket):
+        elif isinstance(packet, QMRAckPacket): 
             original_packet = packet.ack_packet
 
             cur_time = self.simulator.env.now
@@ -191,7 +191,7 @@ class QMR:
 
             self.history_packet_recorder.add_received_ack_packet(packet)
 
-            self.update_q_value(packet, src_drone_id)
+            self.update(packet, src_drone_id)
 
             key2 = f"wait_ack{self.my_drone.identifier}_{original_packet.packet_id}"
 
@@ -202,7 +202,7 @@ class QMR:
                     self.my_drone.mac_protocol.wait_ack_process_finish[key2] = 1  # marked it as finished
                     self.my_drone.mac_protocol.wait_ack_process_dict[key2].interrupt()
 
-    def update_q_value(self, packet, next_hop_id):
+    def update(self, packet, next_hop_id):
         origin_data_packet = packet.ack_packet
         dst_drone = origin_data_packet.dst_drone
 

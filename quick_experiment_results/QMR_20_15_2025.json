@@ -1,0 +1,15 @@
+{
+  "routing_protocol": "QMR",
+  "num_nodes": 20,
+  "drone_speed": 15,
+  "seed": 2025,
+  "sim_time": 5000000.0,
+  "datapacket_generated_num": 480,
+  "packet_delivery_ratio": 52.083333333333336,
+  "average_delay": 679.982144,
+  "routing_load": 0.8,
+  "throughput": 62.1087262748661,
+  "hop_count": 2.948,
+  "collision_num": 259,
+  "mac_delay": 0.016618778584392015
+}

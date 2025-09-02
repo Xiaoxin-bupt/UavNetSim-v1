@@ -1,0 +1,15 @@
+{
+  "routing_protocol": "QGeo",
+  "num_nodes": 30,
+  "drone_speed": 15,
+  "seed": 2025,
+  "sim_time": 5000000.0,
+  "datapacket_generated_num": 728,
+  "packet_delivery_ratio": 6.593406593406594,
+  "average_delay": 1283.4906875,
+  "routing_load": 6.25,
+  "throughput": 46.13329968568681,
+  "hop_count": 2.2291666666666665,
+  "collision_num": 458,
+  "mac_delay": 0.08281347900763358
+}

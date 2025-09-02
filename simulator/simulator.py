@@ -56,13 +56,14 @@ class Simulator:
 
         self.drones = []
         print('Seed is: ', self.seed)
+        print('Total number of drones is: ', self.n_drones)
         for i in range(n_drones):
             if config.HETEROGENEOUS:
                 speed = random.randint(5, 60)
             else:
-                speed = 10
+                speed = config.DEFAULT_DRONE_SPEED
 
-            print('UAV: ', i, ' initial location is at: ', start_position[i], ' speed is: ', speed)
+            # print('UAV: ', i, ' initial location is at: ', start_position[i], ' speed is: ', speed)
             drone = Drone(env=env,
                           node_id=i,
                           coords=start_position[i],
@@ -73,7 +74,7 @@ class Simulator:
             self.drones.append(drone)
 
         # scatter_plot_with_spherical_obstacles(self)
-        scatter_plot(self)
+        # scatter_plot(self)
 
         self.env.process(self.show_performance())
         self.env.process(self.show_time())
@@ -88,6 +89,6 @@ class Simulator:
     def show_performance(self):
         yield self.env.timeout(self.total_simulation_time - 1)
 
-        scatter_plot(self)
+        # scatter_plot(self)
 
         self.metrics.print_metrics()

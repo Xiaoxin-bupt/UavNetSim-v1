@@ -1,0 +1,19 @@
+{
+  "protocols": [
+    "QMR"
+  ],
+  "node_counts": [
+    10,
+    20,
+    30,
+    40
+  ],
+  "speeds": [
+    20
+  ],
+  "seeds": [
+    2025
+  ],
+  "total_experiments": 4,
+  "timestamp": "2025-09-02T14:31:22.406811"
+}

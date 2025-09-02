@@ -1,0 +1,15 @@
+{
+  "routing_protocol": "Greedy",
+  "num_nodes": 40,
+  "drone_speed": 15,
+  "seed": 2025,
+  "sim_time": 5000000.0,
+  "datapacket_generated_num": 933,
+  "packet_delivery_ratio": 46.19506966773847,
+  "average_delay": 762.8666194895592,
+  "routing_load": 0.9280742459396751,
+  "throughput": 58.454278534222404,
+  "hop_count": 1.7865429234338748,
+  "collision_num": 1475,
+  "mac_delay": 0.04547351942740286
+}

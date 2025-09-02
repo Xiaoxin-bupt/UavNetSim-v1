@@ -7,12 +7,16 @@ IEEE_802_11 = IeeeStandard().b_802_11
 MAP_LENGTH = 600  # m, length of the map
 MAP_WIDTH = 600  # m, width of the map
 MAP_HEIGHT = 100  # m, height of the map
-SIM_TIME = 5 * 1e6  # us, total simulation time
-NUMBER_OF_DRONES = 10  # number of drones in the network
+SIM_TIME = 30 * 1e6  # us, total simulation time
+NUMBER_OF_DRONES = 30  # number of drones in the network
 GRID_RESOLUTION = 20  # grid the map for path planning
 STATIC_CASE = 0  # whether to simulate a static network
 HETEROGENEOUS = 0  # heterogeneous network support (in terms of speed)
-LOGGING_LEVEL = logging.INFO  # whether to print the detail information during simulation
+DEFAULT_DRONE_SPEED = 15  # m/s, default speed for drones when not using heterogeneous mode
+LOGGING_LEVEL = logging.WARNING  # whether to print the detail information during simulation
+
+# ---------------------- routing parameters ---------------------- #
+ROUTING_PROTOCOL = "Greedy"  # available options: "Greedy", "Dsdv", "QMR", "QGeo", "Opar"
 
 # ---------- hardware parameters of drone (rotary-wing) -----------#
 PROFILE_DRAG_COEFFICIENT = 0.012

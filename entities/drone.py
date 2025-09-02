@@ -4,8 +4,13 @@ import random
 import math
 import queue
 from routing.qmr.qmr import QMR
+from routing.qgeo.qgeo import QGeo
+from routing.grad.grad import Grad
+from routing.q_routing.q_routing import QRouting
+from routing.opar.opar import Opar
 from simulator.log import logger
 from entities.packet import DataPacket
+from routing.greedy.greedy import Greedy
 from routing.dsdv.dsdv import Dsdv
 from mac.csma_ca import CsmaCa
 from mobility.gauss_markov_3d import GaussMarkov3D
@@ -104,7 +109,25 @@ class Drone:
         self.mac_process_count = 0
         self.enable_blocking = 1  # enable "stop-and-wait" protocol
 
-        self.routing_protocol = QMR(self.simulator, self)
+        # 根据配置动态选择路由协议
+        if config.ROUTING_PROTOCOL == 'Greedy':
+            self.routing_protocol = Greedy(self.simulator, self)
+        elif config.ROUTING_PROTOCOL == 'Dsdv':
+            self.routing_protocol = Dsdv(self.simulator, self)
+        elif config.ROUTING_PROTOCOL == 'QMR':
+            self.routing_protocol = QMR(self.simulator, self)
+        elif config.ROUTING_PROTOCOL == 'QGeo':
+            self.routing_protocol = QGeo(self.simulator, self)
+        elif config.ROUTING_PROTOCOL == 'Grad':
+            self.routing_protocol = Grad(self.simulator, self)
+        elif config.ROUTING_PROTOCOL == 'QRouting':
+            self.routing_protocol = QRouting(self.simulator, self)
+        elif config.ROUTING_PROTOCOL == 'Opar':
+            self.routing_protocol = Opar(self.simulator, self)
+        else:
+            # 默认使用Greedy协议
+            self.routing_protocol = Greedy(self.simulator, self)
+            logger.warning(f"未知的路由协议: {config.ROUTING_PROTOCOL}，使用默认的Greedy协议")
 
         self.mobility_model = GaussMarkov3D(self)
         # self.motion_controller = VfMotionController(self)

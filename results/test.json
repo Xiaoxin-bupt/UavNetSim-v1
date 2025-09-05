@@ -1,15 +1,15 @@
 {
-  "routing_protocol": "QMR",
-  "num_nodes": 20,
+  "routing_protocol": "QGeo",
+  "num_nodes": 15,
   "drone_speed": 15,
   "seed": 2025,
   "sim_time": 30000000,
-  "datapacket_generated_num": 1792,
-  "packet_delivery_ratio": 49.832589285714285,
-  "average_delay": 2900.2547469204924,
-  "routing_load": 1.343784994400896,
-  "throughput": 38.372669689601054,
-  "hop_count": 2.9036954087346025,
-  "collision_num": 689,
-  "mac_delay": 0.05045084284284285
+  "datapacket_generated_num": 1388,
+  "packet_delivery_ratio": 30.61959654178674,
+  "average_delay": 2777.573381176471,
+  "routing_load": 2.1176470588235294,
+  "throughput": 44.40283266533638,
+  "hop_count": 3.1152941176470588,
+  "collision_num": 656,
+  "mac_delay": 0.44229348552730935
 }

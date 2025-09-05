@@ -1,6 +1,6 @@
 {
   "protocols": [
-    "QMR"
+    "QBMCR"
   ],
   "node_counts": [
     10,
@@ -15,5 +15,5 @@
     2025
   ],
   "total_experiments": 4,
-  "timestamp": "2025-09-02T14:31:22.406811"
+  "timestamp": "2025-09-05T19:38:13.064995"
 }

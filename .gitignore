@@ -8,3 +8,5 @@ __pycache__
 *.log
 *.gif
 .vscode/
+results/
+quick_experiment_results/

@@ -1,9 +1,9 @@
 {
   "total_experiments": 4,
-  "completed_experiments": 3,
-  "failed_experiments": 1,
-  "success_rate": 75.0,
-  "total_time_seconds": 300.2397952079773,
-  "average_time_per_experiment": 75.05994880199432,
-  "timestamp": "2025-09-02T14:36:22.647441"
+  "completed_experiments": 0,
+  "failed_experiments": 4,
+  "success_rate": 0.0,
+  "total_time_seconds": 0.8122463226318359,
+  "average_time_per_experiment": 0.20306158065795898,
+  "timestamp": "2025-09-05T19:37:39.213069"
 }

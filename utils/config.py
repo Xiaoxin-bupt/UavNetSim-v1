@@ -4,8 +4,8 @@ from utils.ieee_802_11 import IeeeStandard
 IEEE_802_11 = IeeeStandard().b_802_11
 
 # --------------------- simulation parameters --------------------- #
-MAP_LENGTH = 600  # m, length of the map
-MAP_WIDTH = 600  # m, width of the map
+MAP_LENGTH = 800  # m, length of the map
+MAP_WIDTH = 800  # m, width of the map
 MAP_HEIGHT = 100  # m, height of the map
 SIM_TIME = 30 * 1e6  # us, total simulation time
 NUMBER_OF_DRONES = 30  # number of drones in the network
@@ -16,7 +16,7 @@ DEFAULT_DRONE_SPEED = 15  # m/s, default speed for drones when not using heterog
 LOGGING_LEVEL = logging.WARNING  # whether to print the detail information during simulation
 
 # ---------------------- routing parameters ---------------------- #
-ROUTING_PROTOCOL = "Greedy"  # available options: "Greedy", "Dsdv", "QMR", "QGeo", "Opar"
+ROUTING_PROTOCOL = "Greedy"  # available options: "Greedy", "Dsdv", "QMR", "QGeo", "Opar", "GBMCR"
 
 # ---------- hardware parameters of drone (rotary-wing) -----------#
 PROFILE_DRAG_COEFFICIENT = 0.012
@@ -32,7 +32,7 @@ MEAN_ROTOR_VELOCITY = 7.2  # mean rotor induced velocity in hover
 FUSELAGE_DRAG_RATIO = 0.3
 INITIAL_ENERGY = 20 * 1e3  # in joule
 ENERGY_THRESHOLD = 2000  # in joule
-MAX_QUEUE_SIZE = 200  # maximum size of drone's queue
+MAX_QUEUE_SIZE = 2000  # maximum size of drone's queue
 
 # ----------------------- radio parameters ----------------------- #
 TRANSMITTING_POWER = 0.1  # in Watt

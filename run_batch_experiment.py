@@ -25,7 +25,7 @@ def run_quick_experiment(parallel=True, max_workers=None):
     print(f"=== 运行快速批量实验（{mode_str}模式）===")
     
     # 定义快速实验参数
-    protocols = ['QMR']  # available options: "Greedy", "Dsdv", "QMR", "QGeo", "Opar", "QRouting", "Grad"
+    protocols = ['GBMCR']  # available options:"GBMCR", "Greedy", "Dsdv", "QMR", "QGeo", "Opar", "QRouting", "Grad"
     node_counts = [10,20,30,40]
     speeds = [20]
     seeds = [2025]

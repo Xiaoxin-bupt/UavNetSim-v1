@@ -8,6 +8,7 @@ from routing.qgeo.qgeo import QGeo
 from routing.grad.grad import Grad
 from routing.q_routing.q_routing import QRouting
 from routing.opar.opar import Opar
+from routing.gbmcr.gbmcr import Gbmcr
 from simulator.log import logger
 from entities.packet import DataPacket
 from routing.greedy.greedy import Greedy
@@ -124,6 +125,8 @@ class Drone:
             self.routing_protocol = QRouting(self.simulator, self)
         elif config.ROUTING_PROTOCOL == 'Opar':
             self.routing_protocol = Opar(self.simulator, self)
+        elif config.ROUTING_PROTOCOL == 'GBMCR':
+            self.routing_protocol = Gbmcr(self.simulator, self)
         else:
             # 默认使用Greedy协议
             self.routing_protocol = Greedy(self.simulator, self)
@@ -273,6 +276,7 @@ class Drone:
                                         self.remove_from_queue(packet)
 
                                         if enquire:
+                                            #特殊路由，比如查询类的路由才会用
                                             # in this case, the "final_packet" is actually the control packet
                                             yield self.env.process(self.packet_coming(final_packet))
 

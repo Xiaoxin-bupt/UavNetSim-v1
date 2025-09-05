@@ -20,7 +20,7 @@ def parse_arguments():
     """解析命令行参数"""
     parser = argparse.ArgumentParser(description='UavNetSim 仿真程序')
     parser.add_argument('--protocol', type=str, default=config.ROUTING_PROTOCOL,
-                       choices=['QGeo', 'Greedy', 'Dsdv', 'Grad', 'Q_routing', 'QMR', 'Opar'],
+                       choices=['GBMCR', 'QGeo', 'Greedy', 'Dsdv', 'Grad', 'QRouting', 'QMR', 'Opar'],
                        help='路由协议')
     parser.add_argument('--nodes', type=int, default=config.NUMBER_OF_DRONES,
                        help='无人机节点数量')

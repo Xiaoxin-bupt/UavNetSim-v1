@@ -36,8 +36,9 @@ class Tdma:
             Wiley-IEEE Press, 2008.
         [3] C. E. Perkins, "Ad Hoc Networking," Addison-Wesley, 2001.
 
-    Author: Based on CSMA/CA implementation
-    Created at: 2025/1/13
+    Author: Github @hkphimanshukumar321, some modifications by Zihao Zhou
+    Created at: 2026/1/13
+    Updated at: 2026/1/20
     """
 
     def __init__(self, drone):
